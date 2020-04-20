@@ -1,0 +1,300 @@
+(require '[clj-http.client :as client])
+(client/get "https://api.binance.com/api/v3/ping" {:accept :json})
+(client/get "https://api.binance.com/api/v3/time" {:accept :json})
+(client/get "https://api.binance.com/api/v3/exchangeInfo" {:accept :json})
+(:require [clojure.data.json :as json]))
+(:require [clojure.data.json :as json])
+quit
+(require '[clj-http.client :as client])
+(require '[clojure.data.json :as json])
+(client/get "https://api.binance.com/api/v3/trades/symbol=BTCUSDT" {:as :json})
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}})
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}} {:as :json})
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}} )
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}} {:async? true}
+(fn [response] (println "response is:" response))
+(fn [exception] (println "exception message is: " (.getMessage exception))))
+(require '[clojure.java.io :as io])
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}} {:async? true}
+(fn [response] (with-open [w (io/writer "f:/btcusdtdata.txt" :append true)])
+(client/get "https://api.binance.com/api/v3/trades" {:query-params {:symbol "BTCUSDT"}} {:async? true}
+(fn [response] (with-open [w (io/writer "f:/btcusdtdata.txt" :append true)]
+  (.write w (str response)))
+(fn [exception] (println "exception message is: " (.getMessage exception))))
+)
+quit
+(get-symbol-data "BTCUSDT")
+exit
+quit
+client
+(client/get)
+(:require '[clj-http.client :as client])
+(:require '[clojure.java.io :as io])
+(client/get "https://api.binance.com/api/v3/trade" {:query-params {:symbol BTCUSDT}} {:async? true}
+fn [response] (with-open [w (io/writer "~/Desktop/trader/BTCUSDT.txt" :append true)]
+(.write w (str response)))
+fn [exception] (println "exception message is: " (.getMessage exception)))
+quit
+client
+(client/get)
+quit
+(get-symbol-data "BTCUSDT")
+quit
+(get-symbol-data "BTCUSDT")
+quit\
+quit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+q
+quit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+(require '[next.jdbc :as jdbc])
+exit
+(require '[next.jdbc :as jdbc])
+(def db {:dbtype "postgresql" :dbname "trader" :user "postgres" :password "postgres"})
+(def ds (jdbc/get-datasource db))
+(jdbc/execute! ds ["
+  create table test (
+    id varchar(255) default 'test',
+    test varchar(255) NOT NULL );"])
+exuit
+exit
+(connect-to-db)
+quit
+(connect-to-db)
+quit
+(get-symbol-data)
+(get-symbol-data "BTCUSDT")
+quit
+(get-symbol-data "BTCUSDT")
+(def ds (jdbc/get-datasource {:dbtype "postgresql" :dbname "trader" :user "postgres" :password "postgres"}))
+(jdbc/execute ds ["select * from fiveminutebtcusdt;"])
+(jdbc/execute! ds ["select * from fiveminutebtcusdt;"])
+quit
+exit
+quit
+(get-last-candle-time)
+(connect-to-db)
+(get-last-candle-time)
+jdbc
+jdbc/execute!
+(jdbc/execute! (connect-to-db) ["select open_time from fiveminutebtcusdt;"])
+(def db {:dbtype "postgresql" :dbname "trader" :user "postgres" :password "postgres"})
+(ds)
+(def ds (jdbc/get-datasource db))
+(jdbc/execute! ds ["select open_time from fiveminutebtcusdt;"])
+ds
+(ds)
+'(ds)
+'[ds]
+quit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+(connect-to-db)
+quit
+(connect-to-db)
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+quit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+(inst-ms)
+(java.util.Date.)
+(inst-ms (java.util.Date.))
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+quit
+exit
+(get-symbol-data)
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+quit
+(:require `[clojusre.string :as str])
+(str/replace "\howdy\" #"\" "")
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1496275200" "1496575200")
+(get-symbol-data "BTCUSDT" "5m" "1501545600" "1501845600")
+(get-symbol-data "BTCUSDT" "5m" 1501545600 1501845600)
+(get-symbol-data "BTCUSDT" "5m" "1504224000" "1507824000")
+(get-symbol-data "BTCUSDT" "5m" 1504224000 1507824000)
+(get-symbol-data "BTCUSDT" "5m")
+exit
+(get-symbol-data "BTCUSDT" "5m")
+exit
+(get-symbol-data "BTCUSDT" "5m" 1586598299999)
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 1586598299999)
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 )
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 999)
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 5)
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 1)
+exit
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 1)
+(get-symbol-data "BTCUSDT" "5m" 1586598299999 2)
+(get-symbol-data "BTCUSDT" "5m" 1586298600000 999)
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "999")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" "1586298600000" "1")
+exit
+(get-symbol-data "BTCUSDT" "5m" 1586298600000 5)
+exit
+(populate-database (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+(get-symbol-data "BTCUSDT" "5m" 1586298600000 5)
+(populate-database get-symbol-data "BTCUSDT" "5m" 1586298600000 10)
+(populate-database (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+exit
+(populate-database (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+exit
+(populate-database (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+exit
+(format-data (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+(map bigint [1586298600000 "7141.15000000" "7198.08000000" "7137.62000000" "7177.03000000" "412.79317300" 1586298899999 "2960619.32215812" 3449 "236.88783500" "1699407.79640646" "0"])
+(big int 158629860000)
+(bigint 158629860000)
+(bigdec 158629860000)
+(map bigdec [1586298600000 "7141.15000000" "7198.08000000" "7137.62000000" "7177.03000000" "412.79317300" 1586298899999 "2960619.32215812" 3449 "236.88783500" "1699407.79640646" "0"])
+(map bigdec [[1586298600000 "7141.15000000" "7198.08000000" "7137.62000000" "7177.03000000" "412.79317300" 1586298899999 "2960619.32215812" 3449 "236.88783500" "1699407.79640646" "0"][1586298600000 "7141.15000000" "7198.08000000" "7137.62000000" "7177.03000000" "412.79317300" 1586298899999 "2960619.32215812" 3449 "236.88783500" "1699407.79640646" "0"]])
+exit
+(format-data (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+(populate-database (format-data (get-symbol-data "BTCUSDT" "5m" 1586298600000 10)))
+(THread/sleep 1000)
+(Thread/sleep 1000)
+java.util.Date.
+(java.util.Date.)
+(if (seq [1 2 3])
+  ((println "123"
+   (println "456"))
+  (println "false"))
+(if (seq [1 2 3])
+  ((println "123")
+   (println "456"))
+  (println "false"))
+(if (seq [1 2 3])
+  ((println "123")
+   (println "345"))
+  (println "false"))
+(format-data (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))
+(first (first (format-data (get-symbol-data "BTCUSDT" "5m" 1586298600000 10))))
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+(get-symbol-data "BTCUSDT" "5m" (get-last-candle-time) 500)
+exit
+(get-symbol-data "BTCUSDT" "5m" (get-last-candle-time) 500)
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+(get-symbol-data "BTCUSDT" "5m" (get-last-candle-time) 500)
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+(inst-ms (java.util.Date.))
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m" 500)
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exi
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+exit
+(get-last-candle-time)
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+(Get-last-candle-time)
+(get-last-candle-time)
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time) "5m")
+(fetch-candlestick-data "BTCUSDT" 1501942400000 "5m")
+(fetch-candlestick-data "BTCUSDT" 1401942400000 "5m")
+(compare 1502942400000 "1502942400000")
+(compare 1502942400000 bigint("1502942400000"))
+(compare 1502942400000 (bigint "1502942400000"))
+(compare 1502942400000 (bigint 1502942400000))
+(compare 1502942400000 (bigint 1501942400000))
+exit
+(fetch-candlestick-data "BTCUSDT" 150294240000 "5m")
+(fetch-candlestick-data "BTCUSDT" 1502942500000 "5m")
+exit
+(create-db "BTC/USDT" "5m")
+exit
+(create-db "BTC/USDT" "5m")
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time "BTCUSDT" "5m" 500) "5m" 500)
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time "BTCUSDT" "5m" 500) "5m" 500)
+exit
+(fetch-candlestick-data "BTCUSDT" (get-last-candle-time "BTCUSDT" "5m" 500) "5m" 500)
+(fetch-candlestick-data "BTCUSDT" (inst-ms (java.util.Date.)) "5m" 500)
+(fetch-candlestick-data "BTCUSDT" (- (inst-ms (java.util.Date.)) (get-time-ffset 500 "5m") "5m" 500)
+(fetch-candlestick-data "BTCUSDT" (- (inst-ms (java.util.Date.)) (get-time-offset 500 "5m")) "5m" 500)
+exit
+(create-db "ETHUSDT" "5m")
+(fetch-candlestick-data "ETHUSDT" (get-last-candle-time "ETHUSDT" "5m" 500) "5m" 500)
+exit
