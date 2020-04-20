@@ -1,10 +1,10 @@
 # trader
 
-A Clojure library designed to ... well, that part is up to you.
+A crypto trader written in Clojure.
 
 ## Usage
 
-FIXME
+The default assumes you have a Postgres database running calld trader with default postgres user. If you want to use a differently named database/user, edit the connect-to-db function in trader/src/trader/core.clj.
 
 ## License
 
