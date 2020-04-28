@@ -1,12 +1,14 @@
 (ns trader.core
-  (:require [clj-http.client :as client])
-  (:require [clojure.data.json :as json])
-  (:require [clojure.java.io :as io])
-  (:require [next.jdbc :as jdbc])
-  (:require [next.jdbc.result-set :as rs])
-  (:require [next.jdbc.sql :as sql])
-  (:require [clojure.string :as str])
-  (:require [clojure.edn :as edn]))
+  (:require [trader.data :refer :all]
+            [clj-http.client :as client]
+            [clojure.data.json :as json]
+            [clojure.java.io :as io]
+            [next.jdbc :as jdbc]
+            [next.jdbc.result-set :as rs]
+            [next.jdbc.sql :as sql]
+            [clojure.string :as str]
+            [clojure.edn :as edn]
+            [incanter.core :as i]))
 
 (defn get-symbol-data
   "Function for getting the symbol data from binance"
@@ -35,11 +37,6 @@
                  taker_buy_quote_asset_volume numeric(16,8) not null,
                  ignore numeric(16,8) not null
                  );")]))
-                 
-(defn connect-to-db
-  "Function for connecting to the database."
-  []
-  (jdbc/get-datasource {:dbtype "postgresql" :dbname "trader" :user "postgres" :password "postgres"}))
 
 (declare get-time-offset)
 
@@ -72,7 +69,7 @@
   "Function for inserting the data into the database."
   [data symbol interval limit]
   (sql/insert-multi! (connect-to-db) (str symbol interval) ["open_time" "open" "high" "low" "close" "volume" "close_time" "quote_asset_volume" "number_of_trades" "taker_buy_base_asset_volume" "taker_buy_quote_asset_volume" "ignore"] data {:suffix "ON CONFLICT DO NOTHING"})
-  (Thread/sleep 500)
+  ;;(Thread/sleep 500)
   (fetch-candlestick-data symbol (- (first (first data)) (get-time-offset limit interval)) interval limit))
 
 (defn fetch-candlestick-data
@@ -83,3 +80,10 @@
     (let [data (get-symbol-data symbol interval last-time limit)]
       (populate-database (format-data data) symbol interval limit))))
 
+(defn average [coll]
+  (/ (reduce + coll)
+      (count coll)))
+
+(defn ma [period coll] 
+  (lazy-cat (repeat (dec period) nil) 
+            (map average (partition period 1  coll))))

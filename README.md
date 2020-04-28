@@ -4,7 +4,9 @@ A crypto trader written in Clojure.
 
 ## Usage
 
-The default assumes you have a Postgres database running calld trader with default postgres user. If you want to use a differently named database/user, edit the connect-to-db function in trader/src/trader/core.clj.
+The default assumes you have a Postgres database running called trader with default postgres user. If you want to use a differently named database/user, edit the connect-to-db function in trader/src/trader/core.clj.
+
+As of now, fetching the data from Binance won't stop automatically, so you need to manually stop the loop when the number of rows in the database stops changing.
 
 ## License
 
