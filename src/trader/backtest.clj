@@ -62,5 +62,5 @@
          (map 
            (fn [y]
              (ema-test x y))
-           (range 20 40)))
-       (range 10 30)))
+           (range 45 50)))
+       (range 5 10)))

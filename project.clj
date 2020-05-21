@@ -11,5 +11,8 @@
                  ;;[org.apache.logging.log4j/log4j-api "2.11.0"]
                  ;;[org.apache.logging.log4j/log4j-core "2.11.0"]
                  ;;[org.apache.logging.log4j/log4j-1.2-api "2.11.0"]
-                 [org.postgresql/postgresql "42.2.10"]]
-  :repl-options {:init-ns trader.core})
+                 [org.postgresql/postgresql "42.2.10"]
+                 [uncomplicate/neanderthal "0.31.0"]
+                 [criterium "0.4.5"]]
+  :repl-options {:init-ns trader.core}
+  :jvm-opts ^:replace ["--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED"])

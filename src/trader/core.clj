@@ -8,7 +8,8 @@
             [next.jdbc.sql :as sql]
             [clojure.string :as str]
             [clojure.edn :as edn]
-            [incanter.core :as i]))
+            [incanter.core :as i])
+  (:use [uncomplicate.neanderthal core native]))
 
 (defn get-symbol-data
   "Function for getting the symbol data from binance"
